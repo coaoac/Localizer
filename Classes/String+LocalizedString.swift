@@ -33,12 +33,12 @@ extension String {
             switch ls.type {
             case .short:
                 if currentLocale.starts(with: ls.language.rawValue) {
-                    self.init(ls.value)
+                    self.init(ls.string)
                     return
                 }
             case .long:
                 if ls.language.rawValue == currentLocale {
-                    self.init(ls.value)
+                    self.init(ls.string)
                     return
                 } else if ls.prefix == currentLocale.localePrefix {
                     lsByPrefix = ls
@@ -46,13 +46,13 @@ extension String {
             }
         }
         if let ls = lsByPrefix {
-            self.init(ls.value)
+            self.init(ls.string)
             return
         }
         if let ls = ls.first(where: {
             $0.language.rawValue.contains(Localizer.default.rawValue)
                 || $0.prefix == Localizer.default.prefix }) {
-            self.init(ls.value)
+            self.init(ls.string)
             return
         }
         self.init("❔❔❔")
