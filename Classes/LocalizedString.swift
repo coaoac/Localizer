@@ -1,6 +1,6 @@
 import Foundation
 
-public enum LocalizedString {
+public enum LocalizedString: Sendable, Codable, Equatable, Hashable {
     /// Afrikaans (Namibia)
     case af_NA(String)
     /// Afrikaans (South Africa)
