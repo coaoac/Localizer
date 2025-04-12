@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Language: RawRepresentable, CustomStringConvertible {
+public enum Language: RawRepresentable, CustomStringConvertible, Sendable, CaseIterable {
     case af_NA
     case af_ZA
     case af
