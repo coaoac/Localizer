@@ -58,4 +58,8 @@ extension String {
         self.init("❔❔❔")
         print("⚠️ Localizer: ❌ UNABLE TO DETECT LOCALE 🤬 set breakpoint here to find that string (current locale: \(Localizer.current)")
     }
+
+    public func localized(_ language: Language) -> LocalizedString {
+        return LocalizedString(self, language:language)
+    }
 }
