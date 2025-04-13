@@ -36,6 +36,15 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
         }
     }
 
+    /// Initializes with a dictionary mapping languages to their string representation.
+    ///
+    /// - Parameter dictionary: A dictionary where keys are `Language` enum cases and values are the corresponding strings.
+    public init(_ dictionary: [Language: String]) {
+        self.localizations = dictionary.map { language, text in
+            LocalizedString(text, language: language)
+        }
+    }
+
     // MARK: - Codable Implementation (The Core Logic)
 
     // Decodes from the dictionary format {"sv": "...", "en": "..."}
@@ -169,79 +178,5 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
 
     public var isEmpty: Bool {
         localizations.isEmpty
-    }
-}
-
-// MARK: - Dictionary Extension
-
-extension Dictionary where Key == Language, Value == String {
-
-    /// Returns the string that best matches the device's current locale from the dictionary,
-    /// falling back to the default language if necessary.
-    ///
-    /// Priority:
-    /// 1. Exact locale match (e.g., "en_US")
-    /// 2. Language prefix match (e.g., "en")
-    /// 3. Default language exact match (from `Localizer.default`)
-    /// 4. Default language prefix match
-    ///
-    /// - Returns: The best matching string, or `nil` if no suitable localization is found.
-    public func stringForCurrentDeviceLocale() -> String? {
-        let currentLocale = Locale.current
-        let defaultLanguage = Localizer.default
-
-        guard let targetPrefix = currentLocale.languageCode else {
-            // Cannot determine current language code, try default
-            return self[defaultLanguage]
-        }
-        let fullTargetIdentifier = currentLocale.identifier
-
-        var prefixMatchValue: String? = nil
-        var prefixMatchLanguage: Language? = nil
-        var defaultMatchValue: String? = nil
-        var defaultPrefixMatchValue: String? = nil
-        var defaultPrefixMatchLanguage: Language? = nil
-
-        for (language, stringValue) in self {
-            // Priority 1: Exact full identifier match (e.g., en_US)
-            if language.rawValue == fullTargetIdentifier {
-                return stringValue
-            }
-
-            // Check for prefix match (store it but continue checking for exact match)
-            if language.prefix == targetPrefix {
-                 // Prefer specific regional match over generic prefix if both exist
-                 if prefixMatchLanguage == nil || prefixMatchLanguage!.rawValue.count < language.rawValue.count {
-                      prefixMatchValue = stringValue
-                      prefixMatchLanguage = language
-                 }
-            }
-
-            // Check default matches (store them but continue checking)
-            if language == defaultLanguage {
-                defaultMatchValue = stringValue
-            }
-            if language.prefix == defaultLanguage.prefix {
-                 // Prefer specific regional default match over generic prefix
-                 if defaultPrefixMatchLanguage == nil || defaultPrefixMatchLanguage!.rawValue.count < language.rawValue.count {
-                     defaultPrefixMatchValue = stringValue
-                     defaultPrefixMatchLanguage = language
-                 }
-            }
-        }
-
-        // Return based on priority
-        if let match = prefixMatchValue {
-            return match // Priority 2
-        }
-        if let match = defaultMatchValue {
-            return match // Priority 3
-        }
-        if let match = defaultPrefixMatchValue {
-            return match // Priority 4
-        }
-
-        // Final fallback: return nil if nothing matched
-        return nil
     }
 }
