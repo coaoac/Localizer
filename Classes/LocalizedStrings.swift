@@ -1,7 +1,7 @@
 import Foundation
 
 
-public struct LocalizedStrings: Codable, ExpressibleByArrayLiteral, ExpressibleByDictionaryLiteral {
+public struct LocalizedStrings: Codable, ExpressibleByArrayLiteral, ExpressibleByDictionaryLiteral, Sendable {
 
     // Add these typealiases to conform to ExpressibleByDictionaryLiteral
     public typealias Key = Language
