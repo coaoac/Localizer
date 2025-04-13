@@ -1,7 +1,7 @@
 import Foundation
 
 
-public struct LocalizedStrings: Codable, ExpressibleByArrayLiteral, ExpressibleByDictionaryLiteral, Sendable {
+public struct LocalizedStrings: Codable, /*ExpressibleByArrayLiteral,*/ ExpressibleByDictionaryLiteral, Sendable {
 
     // Add these typealiases to conform to ExpressibleByDictionaryLiteral
     public typealias Key = Language
@@ -18,7 +18,7 @@ public struct LocalizedStrings: Codable, ExpressibleByArrayLiteral, ExpressibleB
     }
 
     // Allow initialization with an array literal: let map: LocalizedStringMap = [.en("Hello"), .sv("Hej")]
-    public init(arrayLiteral elements: LocalizedString...) {
+    init(arrayLiteral elements: LocalizedString...) {
         self.init(elements)
     }
 

@@ -2,8 +2,8 @@ import Foundation
 
 private var localizer = Localizer()
 
-public final class Localizer: Localizable {
-    public static var localeKey: LocaleKey? { return \.locale }
+final class Localizer: Localizable {
+    static var localeKey: LocaleKey? { return \.locale }
     
     var locale: String? {
         return currentLocale.identifier
@@ -29,7 +29,7 @@ public final class Localizer: Localizable {
         return localizer
     }
     
-    public static var current: Language {
+    static var current: Language {
         get {
             return shared.currentLanguage
         }
@@ -38,7 +38,7 @@ public final class Localizer: Localizable {
         }
     }
     
-    public static var `default`: Language {
+    static var `default`: Language {
         get {
             return shared.defaultLanguage
         }

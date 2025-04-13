@@ -1,3 +1,4 @@
+/*
 import Foundation
 
 public typealias Localizations = [LocalizedString]
@@ -11,4 +12,4 @@ public extension Localizations {
         return localization(for: language)?.string
     }
 }
-
+*/

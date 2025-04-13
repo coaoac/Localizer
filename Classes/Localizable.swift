@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol Localizable {
+protocol Localizable {
     /// Locale Key
     typealias LocaleKey = KeyPath<Self, String?>
     

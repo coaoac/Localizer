@@ -5,19 +5,19 @@ extension String {
         return components(separatedBy: "_").first ?? self
     }
     
-    public init (_ ls: LocalizedString...) {
+    init (_ ls: LocalizedString...) {
         self.init(for: Localizer.shared, ls)
     }
     
-    public init <L: Localizable>(for localizable: L, _ ls: LocalizedString...) {
+    init <L: Localizable>(for localizable: L, _ ls: LocalizedString...) {
         self.init(for: localizable, ls)
     }
     
-    public init (_ ls: [LocalizedString]) {
+    init (_ ls: [LocalizedString]) {
         self.init(for: Localizer.shared, ls)
     }
     
-    public init <L: Localizable>(for localizable: L, _ ls: [LocalizedString]) {
+    init <L: Localizable>(for localizable: L, _ ls: [LocalizedString]) {
         guard ls.count > 0 else {
             self.init("")
             print("⚠️ Localization: ❌ EMPTY STRING")
@@ -59,7 +59,7 @@ extension String {
         print("⚠️ Localizer: ❌ UNABLE TO DETECT LOCALE 🤬 set breakpoint here to find that string (current locale: \(Localizer.current)")
     }
 
-    public func localized(_ language: Language) -> LocalizedString {
+    func localized(_ language: Language) -> LocalizedString {
         return LocalizedString(self, language:language)
     }
 }
