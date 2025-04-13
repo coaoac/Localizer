@@ -98,6 +98,75 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
         }
     }
 
+    // MARK: - Localization Selection
+
+    /// Returns the string that best matches the device's current locale,
+    /// falling back to the default language if necessary.
+    ///
+    /// Priority:
+    /// 1. Exact locale match (e.g., "en_US")
+    /// 2. Language prefix match (e.g., "en")
+    /// 3. Default language exact match (from `Localizer.default`)
+    /// 4. Default language prefix match
+    ///
+    /// - Returns: The best matching string, or `nil` if no suitable localization is found.
+    public func stringForCurrentDeviceLocale() -> String? {
+        let currentLocale = Locale.current
+        let defaultLanguage = Localizer.default
+
+        // Use the more compatible languageCode property
+        guard let targetPrefix = currentLocale.languageCode else {
+             // Cannot determine current language code, try default
+             return self[defaultLanguage]
+        }
+        // Use the standard identifier for the full match
+        let fullTargetIdentifier = currentLocale.identifier
+
+        var prefixMatch: LocalizedString? = nil
+        var defaultMatch: LocalizedString? = nil
+        var defaultPrefixMatch: LocalizedString? = nil
+
+        for localization in localizations {
+            // Priority 1: Exact full identifier match (e.g., en_US)
+            if localization.language.rawValue == fullTargetIdentifier {
+                return localization.string
+            }
+
+            // Check for prefix match (store it but continue checking for exact match)
+            if localization.language.prefix == targetPrefix {
+                 // Prefer specific regional match over generic prefix if both exist
+                 if prefixMatch == nil || prefixMatch!.language.rawValue.count < localization.language.rawValue.count {
+                      prefixMatch = localization
+                 }
+            }
+
+            // Check default matches (store them but continue checking)
+            if localization.language == defaultLanguage {
+                defaultMatch = localization
+            }
+            if localization.language.prefix == defaultLanguage.prefix {
+                 // Prefer specific regional default match over generic prefix
+                 if defaultPrefixMatch == nil || defaultPrefixMatch!.language.rawValue.count < localization.language.rawValue.count {
+                     defaultPrefixMatch = localization
+                 }
+            }
+        }
+
+        // Return based on priority
+        if let match = prefixMatch {
+            return match.string // Priority 2
+        }
+        if let match = defaultMatch {
+            return match.string // Priority 3
+        }
+        if let match = defaultPrefixMatch {
+            return match.string // Priority 4
+        }
+
+        // Final fallback: return nil if nothing matched
+        return nil
+    }
+
     public var isEmpty: Bool {
         localizations.isEmpty
     }
