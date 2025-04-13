@@ -119,7 +119,7 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
     /// 4. Default language prefix match
     ///
     /// - Returns: The best matching string, or `nil` if no suitable localization is found.
-    public func stringForCurrentDeviceLocale() -> String? {
+    func stringForCurrentDeviceLocale() -> String? {
         let currentLocale = Locale.current
         let defaultLanguage = Localizer.default
 
