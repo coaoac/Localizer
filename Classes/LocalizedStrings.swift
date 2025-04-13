@@ -1,5 +1,6 @@
 import Foundation
 
+@dynamicMemberLookup
 public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLiteral, Sendable {
 
     // Add these typealiases to conform to ExpressibleByDictionaryLiteral
@@ -95,6 +96,28 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
                 localizations.append(LocalizedString(newValue, language: language))
             }
             // If no existing localization was found and newValue is nil, do nothing
+        }
+    }
+
+    // New dynamic member subscript
+    public subscript(dynamicMember member: String) -> String? {
+        get {
+            // Find the Language case matching the member string (using prefix)
+            guard let language = Language.allCases.first(where: { $0.prefix == member }) else {
+                print("Warning: Language prefix '\(member)' not recognized.")
+                return nil
+            }
+            // Use the existing subscript getter
+            return self[language]
+        }
+        set {
+            // Find the Language case matching the member string (using prefix)
+             guard let language = Language.allCases.first(where: { $0.prefix == member }) else {
+                 print("Warning: Language prefix '\(member)' not recognized. Cannot set value.")
+                return
+            }
+            // Use the existing subscript setter
+            self[language] = newValue
         }
     }
 
