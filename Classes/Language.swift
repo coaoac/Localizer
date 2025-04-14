@@ -1325,6 +1325,18 @@ public enum Language: RawRepresentable, CustomStringConvertible, Sendable, CaseI
         return rawValue.components(separatedBy: "_").first ?? rawValue
     }
     
+    public static var current: Language {
+        let localeIdentifier = Locale.current.identifier
+        if let language = Language(rawValue: localeIdentifier) {
+            return language
+        } else {
+            // Handle case where the exact locale isn't in our enum
+            // Extract the language code from the locale identifier
+            let languageCode = localeIdentifier.components(separatedBy: "_").first ?? "en"
+            return Language(rawValue: languageCode) ?? .en
+        }
+    }
+    
     public var description: String {
         switch self {
         case .af_NA: return "Afrikaans (Namibia)"
