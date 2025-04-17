@@ -6,7 +6,7 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
     public typealias Key = Language
     public typealias Value = String
 
-    var localizations: [LocalizedString]
+    public var localizations: [LocalizedString]
 
     // MARK: - Initializers
 
