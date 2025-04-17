@@ -1777,4 +1777,8 @@ public enum Language: RawRepresentable, CustomStringConvertible, Sendable, CaseI
         case .zu: return "Zulu"
         }
     }
+
+    public func toCountryCode() -> String {
+        return CountryMapper.countryCode(for: self)
+    }
 }
