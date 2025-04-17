@@ -22,7 +22,7 @@ public struct LocalizationService {
     /// - Parameter language: The language to get market and locale for
     /// - Returns: A tuple with market (country code) and locale string
     public static func getMarketAndLocale(for language: Language) -> (market: String, locale: String) {
-        let market = CountryMapper.countryCode(for: language)
+        let market = CountryCode.countryCode(for: language)
         let locale = self.locale(for: language)
         return (market, locale)
     }
@@ -34,7 +34,7 @@ public struct LocalizationService {
     /// - Returns: The locale string in format "xx-XX"
     public static func locale(for language: Language) -> String {
         let langCode = isoCode(for: language)
-        let countryCode = CountryMapper.countryCode(for: language)
+        let countryCode = CountryCode.countryCode(for: language)
         return "\(langCode)-\(countryCode)"
     }
     
