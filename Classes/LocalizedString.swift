@@ -1329,883 +1329,252 @@ public enum LocalizedString: Sendable, Codable, Equatable, Hashable {
     
     public var language: Language {
         switch self {
-        case .af_NA: return .af_NA
-        case .af_ZA: return .af_ZA
         case .af: return .af
-        case .ak_GH: return .ak_GH
         case .ak: return .ak
-        case .sq_AL: return .sq_AL
         case .sq: return .sq
-        case .am_ET: return .am_ET
         case .am: return .am
-        case .ar_DZ: return .ar_DZ
-        case .ar_BH: return .ar_BH
-        case .ar_EG: return .ar_EG
-        case .ar_IQ: return .ar_IQ
-        case .ar_JO: return .ar_JO
-        case .ar_KW: return .ar_KW
-        case .ar_LB: return .ar_LB
-        case .ar_LY: return .ar_LY
-        case .ar_MA: return .ar_MA
-        case .ar_OM: return .ar_OM
-        case .ar_QA: return .ar_QA
-        case .ar_SA: return .ar_SA
-        case .ar_SD: return .ar_SD
-        case .ar_SY: return .ar_SY
-        case .ar_TN: return .ar_TN
-        case .ar_AE: return .ar_AE
-        case .ar_YE: return .ar_YE
         case .ar: return .ar
-        case .hy_AM: return .hy_AM
         case .hy: return .hy
-        case .as_IN: return .as_IN
         case .as: return .as
-        case .asa_TZ: return .asa_TZ
         case .asa: return .asa
-        case .az_Cyrl: return .az_Cyrl
-        case .az_Cyrl_AZ: return .az_Cyrl_AZ
-        case .az_Latn: return .az_Latn
-        case .az_Latn_AZ: return .az_Latn_AZ
         case .az: return .az
-        case .bm_ML: return .bm_ML
         case .bm: return .bm
-        case .eu_ES: return .eu_ES
         case .eu: return .eu
-        case .be_BY: return .be_BY
         case .be: return .be
-        case .bem_ZM: return .bem_ZM
         case .bem: return .bem
-        case .bez_TZ: return .bez_TZ
         case .bez: return .bez
-        case .bn_BD: return .bn_BD
-        case .bn_IN: return .bn_IN
         case .bn: return .bn
-        case .bs_BA: return .bs_BA
         case .bs: return .bs
-        case .bg_BG: return .bg_BG
         case .bg: return .bg
-        case .my_MM: return .my_MM
         case .my: return .my
-        case .yue_Hant_HK: return .yue_Hant_HK
-        case .ca_ES: return .ca_ES
-        case .ca: return .ca
-        case .tzm_Latn: return .tzm_Latn
-        case .tzm_Latn_MA: return .tzm_Latn_MA
-        case .tzm: return .tzm
-        case .chr_US: return .chr_US
-        case .chr: return .chr
-        case .cgg_UG: return .cgg_UG
         case .cgg: return .cgg
-        case .zh_Hans: return .zh_Hans
-        case .zh_Hans_CN: return .zh_Hans_CN
-        case .zh_Hans_HK: return .zh_Hans_HK
-        case .zh_Hans_MO: return .zh_Hans_MO
-        case .zh_Hans_SG: return .zh_Hans_SG
-        case .zh_Hant: return .zh_Hant
-        case .zh_Hant_HK: return .zh_Hant_HK
-        case .zh_Hant_MO: return .zh_Hant_MO
-        case .zh_Hant_TW: return .zh_Hant_TW
         case .zh: return .zh
-        case .kw_GB: return .kw_GB
         case .kw: return .kw
-        case .hr_HR: return .hr_HR
         case .hr: return .hr
-        case .cs_CZ: return .cs_CZ
         case .cs: return .cs
-        case .da_DK: return .da_DK
         case .da: return .da
-        case .nl_BE: return .nl_BE
-        case .nl_NL: return .nl_NL
         case .nl: return .nl
-        case .ebu_KE: return .ebu_KE
         case .ebu: return .ebu
-        case .en_AS: return .en_AS
-        case .en_AU: return .en_AU
-        case .en_BE: return .en_BE
-        case .en_BZ: return .en_BZ
-        case .en_BW: return .en_BW
-        case .en_CA: return .en_CA
-        case .en_GU: return .en_GU
-        case .en_HK: return .en_HK
-        case .en_IN: return .en_IN
-        case .en_IE: return .en_IE
-        case .en_IL: return .en_IL
-        case .en_JM: return .en_JM
-        case .en_MT: return .en_MT
-        case .en_MH: return .en_MH
-        case .en_MU: return .en_MU
-        case .en_NA: return .en_NA
-        case .en_NZ: return .en_NZ
-        case .en_MP: return .en_MP
-        case .en_PK: return .en_PK
-        case .en_PH: return .en_PH
-        case .en_SG: return .en_SG
-        case .en_ZA: return .en_ZA
-        case .en_TT: return .en_TT
-        case .en_UM: return .en_UM
-        case .en_VI: return .en_VI
-        case .en_GB: return .en_GB
-        case .en_US: return .en_US
-        case .en_ZW: return .en_ZW
         case .en: return .en
         case .eo: return .eo
-        case .et_EE: return .et_EE
         case .et: return .et
-        case .ee_GH: return .ee_GH
-        case .ee_TG: return .ee_TG
         case .ee: return .ee
-        case .fo_FO: return .fo_FO
         case .fo: return .fo
-        case .fil_PH: return .fil_PH
         case .fil: return .fil
-        case .fi_FI: return .fi_FI
         case .fi: return .fi
-        case .fr_BE: return .fr_BE
-        case .fr_BJ: return .fr_BJ
-        case .fr_BF: return .fr_BF
-        case .fr_BI: return .fr_BI
-        case .fr_CM: return .fr_CM
-        case .fr_CA: return .fr_CA
-        case .fr_CF: return .fr_CF
-        case .fr_TD: return .fr_TD
-        case .fr_KM: return .fr_KM
-        case .fr_CG: return .fr_CG
-        case .fr_CD: return .fr_CD
-        case .fr_CI: return .fr_CI
-        case .fr_DJ: return .fr_DJ
-        case .fr_GQ: return .fr_GQ
-        case .fr_FR: return .fr_FR
-        case .fr_GA: return .fr_GA
-        case .fr_GP: return .fr_GP
-        case .fr_GN: return .fr_GN
-        case .fr_LU: return .fr_LU
-        case .fr_MG: return .fr_MG
-        case .fr_ML: return .fr_ML
-        case .fr_MQ: return .fr_MQ
-        case .fr_MC: return .fr_MC
-        case .fr_NE: return .fr_NE
-        case .fr_RW: return .fr_RW
-        case .fr_RE: return .fr_RE
-        case .fr_BL: return .fr_BL
-        case .fr_MF: return .fr_MF
-        case .fr_SN: return .fr_SN
-        case .fr_CH: return .fr_CH
-        case .fr_TG: return .fr_TG
         case .fr: return .fr
-        case .ff_SN: return .ff_SN
         case .ff: return .ff
-        case .gl_ES: return .gl_ES
         case .gl: return .gl
-        case .lg_UG: return .lg_UG
         case .lg: return .lg
-        case .ka_GE: return .ka_GE
         case .ka: return .ka
-        case .de_AT: return .de_AT
-        case .de_BE: return .de_BE
-        case .de_DE: return .de_DE
-        case .de_LI: return .de_LI
-        case .de_LU: return .de_LU
-        case .de_CH: return .de_CH
         case .de: return .de
-        case .el_CY: return .el_CY
-        case .el_GR: return .el_GR
         case .el: return .el
-        case .gu_IN: return .gu_IN
         case .gu: return .gu
-        case .guz_KE: return .guz_KE
-        case .guz: return .guz
-        case .ha_Latn: return .ha_Latn
-        case .ha_Latn_GH: return .ha_Latn_GH
-        case .ha_Latn_NE: return .ha_Latn_NE
-        case .ha_Latn_NG: return .ha_Latn_NG
         case .ha: return .ha
-        case .haw_US: return .haw_US
         case .haw: return .haw
-        case .he_IL: return .he_IL
         case .he: return .he
-        case .hi_IN: return .hi_IN
         case .hi: return .hi
-        case .hu_HU: return .hu_HU
         case .hu: return .hu
-        case .is_IS: return .is_IS
-        case .is: return .is
-        case .ig_NG: return .ig_NG
+        case .`is`: return .`is`
         case .ig: return .ig
-        case .id_ID: return .id_ID
         case .id: return .id
-        case .ga_IE: return .ga_IE
         case .ga: return .ga
-        case .it_IT: return .it_IT
-        case .it_CH: return .it_CH
         case .it: return .it
-        case .ja_JP: return .ja_JP
         case .ja: return .ja
-        case .kea_CV: return .kea_CV
         case .kea: return .kea
-        case .kab_DZ: return .kab_DZ
         case .kab: return .kab
-        case .kl_GL: return .kl_GL
         case .kl: return .kl
-        case .kln_KE: return .kln_KE
         case .kln: return .kln
-        case .kam_KE: return .kam_KE
         case .kam: return .kam
-        case .kn_IN: return .kn_IN
         case .kn: return .kn
-        case .kk_Cyrl: return .kk_Cyrl
-        case .kk_Cyrl_KZ: return .kk_Cyrl_KZ
         case .kk: return .kk
-        case .km_KH: return .km_KH
         case .km: return .km
-        case .ki_KE: return .ki_KE
         case .ki: return .ki
-        case .rw_RW: return .rw_RW
         case .rw: return .rw
-        case .kok_IN: return .kok_IN
         case .kok: return .kok
-        case .ko_KR: return .ko_KR
         case .ko: return .ko
-        case .khq_ML: return .khq_ML
         case .khq: return .khq
-        case .ses_ML: return .ses_ML
         case .ses: return .ses
-        case .lag_TZ: return .lag_TZ
         case .lag: return .lag
-        case .lv_LV: return .lv_LV
         case .lv: return .lv
-        case .lt_LT: return .lt_LT
         case .lt: return .lt
-        case .luo_KE: return .luo_KE
         case .luo: return .luo
-        case .luy_KE: return .luy_KE
         case .luy: return .luy
-        case .mk_MK: return .mk_MK
         case .mk: return .mk
-        case .jmc_TZ: return .jmc_TZ
         case .jmc: return .jmc
-        case .kde_TZ: return .kde_TZ
         case .kde: return .kde
-        case .mg_MG: return .mg_MG
         case .mg: return .mg
-        case .ms_BN: return .ms_BN
-        case .ms_MY: return .ms_MY
-        case .ms: return .ms
-        case .ml_IN: return .ml_IN
         case .ml: return .ml
-        case .mt_MT: return .mt_MT
         case .mt: return .mt
-        case .gv_GB: return .gv_GB
         case .gv: return .gv
-        case .mr_IN: return .mr_IN
         case .mr: return .mr
-        case .mas_KE: return .mas_KE
-        case .mas_TZ: return .mas_TZ
         case .mas: return .mas
-        case .mer_KE: return .mer_KE
         case .mer: return .mer
-        case .mfe_MU: return .mfe_MU
         case .mfe: return .mfe
-        case .naq_NA: return .naq_NA
         case .naq: return .naq
-        case .ne_IN: return .ne_IN
-        case .ne_NP: return .ne_NP
         case .ne: return .ne
-        case .nd_ZW: return .nd_ZW
         case .nd: return .nd
-        case .nb_NO: return .nb_NO
         case .nb: return .nb
-        case .nn_NO: return .nn_NO
         case .nn: return .nn
-        case .nyn_UG: return .nyn_UG
         case .nyn: return .nyn
-        case .or_IN: return .or_IN
         case .or: return .or
-        case .om_ET: return .om_ET
-        case .om_KE: return .om_KE
         case .om: return .om
-        case .ps_AF: return .ps_AF
         case .ps: return .ps
-        case .fa_AF: return .fa_AF
-        case .fa_IR: return .fa_IR
         case .fa: return .fa
-        case .pl_PL: return .pl_PL
         case .pl: return .pl
-        case .pt_BR: return .pt_BR
-        case .pt_GW: return .pt_GW
-        case .pt_MZ: return .pt_MZ
-        case .pt_PT: return .pt_PT
         case .pt: return .pt
-        case .pa_Arab: return .pa_Arab
-        case .pa_Arab_PK: return .pa_Arab_PK
-        case .pa_Guru: return .pa_Guru
-        case .pa_Guru_IN: return .pa_Guru_IN
         case .pa: return .pa
-        case .ro_MD: return .ro_MD
-        case .ro_RO: return .ro_RO
         case .ro: return .ro
-        case .rm_CH: return .rm_CH
         case .rm: return .rm
-        case .rof_TZ: return .rof_TZ
-        case .rof: return .rof
-        case .ru_MD: return .ru_MD
-        case .ru_RU: return .ru_RU
-        case .ru_UA: return .ru_UA
         case .ru: return .ru
-        case .rwk_TZ: return .rwk_TZ
-        case .rwk: return .rwk
-        case .saq_KE: return .saq_KE
         case .saq: return .saq
-        case .sg_CF: return .sg_CF
         case .sg: return .sg
-        case .seh_MZ: return .seh_MZ
-        case .seh: return .seh
-        case .sr_Cyrl: return .sr_Cyrl
-        case .sr_Cyrl_BA: return .sr_Cyrl_BA
-        case .sr_Cyrl_ME: return .sr_Cyrl_ME
-        case .sr_Cyrl_RS: return .sr_Cyrl_RS
-        case .sr_Latn: return .sr_Latn
-        case .sr_Latn_BA: return .sr_Latn_BA
-        case .sr_Latn_ME: return .sr_Latn_ME
-        case .sr_Latn_RS: return .sr_Latn_RS
         case .sr: return .sr
-        case .sn_ZW: return .sn_ZW
-        case .sn: return .sn
-        case .ii_CN: return .ii_CN
-        case .ii: return .ii
-        case .si_LK: return .si_LK
-        case .si: return .si
-        case .sk_SK: return .sk_SK
         case .sk: return .sk
-        case .sl_SI: return .sl_SI
         case .sl: return .sl
-        case .xog_UG: return .xog_UG
         case .xog: return .xog
-        case .so_DJ: return .so_DJ
-        case .so_ET: return .so_ET
-        case .so_KE: return .so_KE
-        case .so_SO: return .so_SO
         case .so: return .so
-        case .es_AR: return .es_AR
-        case .es_BO: return .es_BO
-        case .es_CL: return .es_CL
-        case .es_CO: return .es_CO
-        case .es_CR: return .es_CR
-        case .es_DO: return .es_DO
-        case .es_EC: return .es_EC
-        case .es_SV: return .es_SV
-        case .es_GQ: return .es_GQ
-        case .es_GT: return .es_GT
-        case .es_HN: return .es_HN
-        case .es_419: return .es_419
-        case .es_MX: return .es_MX
-        case .es_NI: return .es_NI
-        case .es_PA: return .es_PA
-        case .es_PY: return .es_PY
-        case .es_PE: return .es_PE
-        case .es_PR: return .es_PR
-        case .es_ES: return .es_ES
-        case .es_US: return .es_US
-        case .es_UY: return .es_UY
-        case .es_VE: return .es_VE
         case .es: return .es
-        case .sw_KE: return .sw_KE
-        case .sw_TZ: return .sw_TZ
         case .sw: return .sw
-        case .sv_FI: return .sv_FI
-        case .sv_SE: return .sv_SE
         case .sv: return .sv
-        case .gsw_CH: return .gsw_CH
         case .gsw: return .gsw
-        case .shi_Latn: return .shi_Latn
-        case .shi_Latn_MA: return .shi_Latn_MA
-        case .shi_Tfng: return .shi_Tfng
-        case .shi_Tfng_MA: return .shi_Tfng_MA
         case .shi: return .shi
-        case .dav_KE: return .dav_KE
-        case .dav: return .dav
-        case .ta_IN: return .ta_IN
-        case .ta_LK: return .ta_LK
-        case .ta: return .ta
-        case .te_IN: return .te_IN
-        case .te: return .te
-        case .teo_KE: return .teo_KE
-        case .teo_UG: return .teo_UG
-        case .teo: return .teo
-        case .th_TH: return .th_TH
-        case .th: return .th
-        case .bo_CN: return .bo_CN
-        case .bo_IN: return .bo_IN
-        case .bo: return .bo
-        case .ti_ER: return .ti_ER
-        case .ti_ET: return .ti_ET
-        case .ti: return .ti
-        case .to_TO: return .to_TO
-        case .to: return .to
-        case .tr_TR: return .tr_TR
-        case .tr: return .tr
-        case .uk_UA: return .uk_UA
-        case .uk: return .uk
-        case .ur_IN: return .ur_IN
-        case .ur_PK: return .ur_PK
-        case .ur: return .ur
-        case .uz_Arab: return .uz_Arab
-        case .uz_Arab_AF: return .uz_Arab_AF
-        case .uz_Cyrl: return .uz_Cyrl
-        case .uz_Cyrl_UZ: return .uz_Cyrl_UZ
-        case .uz_Latn: return .uz_Latn
-        case .uz_Latn_UZ: return .uz_Latn_UZ
-        case .uz: return .uz
-        case .vi_VN: return .vi_VN
-        case .vi: return .vi
-        case .vun_TZ: return .vun_TZ
         case .vun: return .vun
-        case .cy_GB: return .cy_GB
         case .cy: return .cy
-        case .yo_NG: return .yo_NG
         case .yo: return .yo
-        case .zu_ZA: return .zu_ZA
         case .zu: return .zu
+        default: return .en
         }
     }
 
     public init(_ string: String, language: Language) {
         switch language {
-        case .af_NA: self = .af_NA(string)
-        case .af_ZA: self = .af_ZA(string)
         case .af: self = .af(string)
-        case .ak_GH: self = .ak_GH(string)
         case .ak: self = .ak(string)
-        case .sq_AL: self = .sq_AL(string)
         case .sq: self = .sq(string)
-        case .am_ET: self = .am_ET(string)
         case .am: self = .am(string)
-        case .ar_DZ: self = .ar_DZ(string)
-        case .ar_BH: self = .ar_BH(string)
-        case .ar_EG: self = .ar_EG(string)
-        case .ar_IQ: self = .ar_IQ(string)
-        case .ar_JO: self = .ar_JO(string)
-        case .ar_KW: self = .ar_KW(string)
-        case .ar_LB: self = .ar_LB(string)
-        case .ar_LY: self = .ar_LY(string)
-        case .ar_MA: self = .ar_MA(string)
-        case .ar_OM: self = .ar_OM(string)
-        case .ar_QA: self = .ar_QA(string)
-        case .ar_SA: self = .ar_SA(string)
-        case .ar_SD: self = .ar_SD(string)
-        case .ar_SY: self = .ar_SY(string)
-        case .ar_TN: self = .ar_TN(string)
-        case .ar_AE: self = .ar_AE(string)
-        case .ar_YE: self = .ar_YE(string)
         case .ar: self = .ar(string)
-        case .hy_AM: self = .hy_AM(string)
         case .hy: self = .hy(string)
-        case .as_IN: self = .as_IN(string)
         case .as: self = .as(string)
-        case .asa_TZ: self = .asa_TZ(string)
         case .asa: self = .asa(string)
-        case .az_Cyrl: self = .az_Cyrl(string)
-        case .az_Cyrl_AZ: self = .az_Cyrl_AZ(string)
-        case .az_Latn: self = .az_Latn(string)
-        case .az_Latn_AZ: self = .az_Latn_AZ(string)
         case .az: self = .az(string)
-        case .bm_ML: self = .bm_ML(string)
         case .bm: self = .bm(string)
-        case .eu_ES: self = .eu_ES(string)
         case .eu: self = .eu(string)
-        case .be_BY: self = .be_BY(string)
         case .be: self = .be(string)
-        case .bem_ZM: self = .bem_ZM(string)
         case .bem: self = .bem(string)
-        case .bez_TZ: self = .bez_TZ(string)
         case .bez: self = .bez(string)
-        case .bn_BD: self = .bn_BD(string)
-        case .bn_IN: self = .bn_IN(string)
         case .bn: self = .bn(string)
-        case .bs_BA: self = .bs_BA(string)
         case .bs: self = .bs(string)
-        case .bg_BG: self = .bg_BG(string)
         case .bg: self = .bg(string)
-        case .my_MM: self = .my_MM(string)
-        case .my: self = .my(string)
-        case .yue_Hant_HK: self = .yue_Hant_HK(string)
-        case .ca_ES: self = .ca_ES(string)
         case .ca: self = .ca(string)
-        case .tzm_Latn: self = .tzm_Latn(string)
-        case .tzm_Latn_MA: self = .tzm_Latn_MA(string)
-        case .tzm: self = .tzm(string)
-        case .chr_US: self = .chr_US(string)
         case .chr: self = .chr(string)
-        case .cgg_UG: self = .cgg_UG(string)
         case .cgg: self = .cgg(string)
-        case .zh_Hans: self = .zh_Hans(string)
-        case .zh_Hans_CN: self = .zh_Hans_CN(string)
-        case .zh_Hans_HK: self = .zh_Hans_HK(string)
-        case .zh_Hans_MO: self = .zh_Hans_MO(string)
-        case .zh_Hans_SG: self = .zh_Hans_SG(string)
-        case .zh_Hant: self = .zh_Hant(string)
-        case .zh_Hant_HK: self = .zh_Hant_HK(string)
-        case .zh_Hant_MO: self = .zh_Hant_MO(string)
-        case .zh_Hant_TW: self = .zh_Hant_TW(string)
         case .zh: self = .zh(string)
-        case .kw_GB: self = .kw_GB(string)
-        case .kw: self = .kw(string)
-        case .hr_HR: self = .hr_HR(string)
         case .hr: self = .hr(string)
-        case .cs_CZ: self = .cs_CZ(string)
         case .cs: self = .cs(string)
-        case .da_DK: self = .da_DK(string)
         case .da: self = .da(string)
-        case .nl_BE: self = .nl_BE(string)
-        case .nl_NL: self = .nl_NL(string)
         case .nl: self = .nl(string)
-        case .ebu_KE: self = .ebu_KE(string)
         case .ebu: self = .ebu(string)
-        case .en_AS: self = .en_AS(string)
-        case .en_AU: self = .en_AU(string)
-        case .en_BE: self = .en_BE(string)
-        case .en_BZ: self = .en_BZ(string)
-        case .en_BW: self = .en_BW(string)
-        case .en_CA: self = .en_CA(string)
-        case .en_GU: self = .en_GU(string)
-        case .en_HK: self = .en_HK(string)
-        case .en_IN: self = .en_IN(string)
-        case .en_IE: self = .en_IE(string)
-        case .en_IL: self = .en_IL(string)
-        case .en_JM: self = .en_JM(string)
-        case .en_MT: self = .en_MT(string)
-        case .en_MH: self = .en_MH(string)
-        case .en_MU: self = .en_MU(string)
-        case .en_NA: self = .en_NA(string)
-        case .en_NZ: self = .en_NZ(string)
-        case .en_MP: self = .en_MP(string)
-        case .en_PK: self = .en_PK(string)
-        case .en_PH: self = .en_PH(string)
-        case .en_SG: self = .en_SG(string)
-        case .en_ZA: self = .en_ZA(string)
-        case .en_TT: self = .en_TT(string)
-        case .en_UM: self = .en_UM(string)
-        case .en_VI: self = .en_VI(string)
-        case .en_GB: self = .en_GB(string)
-        case .en_US: self = .en_US(string)
-        case .en_ZW: self = .en_ZW(string)
         case .en: self = .en(string)
         case .eo: self = .eo(string)
-        case .et_EE: self = .et_EE(string)
         case .et: self = .et(string)
-        case .ee_GH: self = .ee_GH(string)
-        case .ee_TG: self = .ee_TG(string)
         case .ee: self = .ee(string)
-        case .fo_FO: self = .fo_FO(string)
         case .fo: self = .fo(string)
-        case .fil_PH: self = .fil_PH(string)
         case .fil: self = .fil(string)
-        case .fi_FI: self = .fi_FI(string)
-        case .fi: self = .fi(string)
-        case .fr_BE: self = .fr_BE(string)
-        case .fr_BJ: self = .fr_BJ(string)
-        case .fr_BF: self = .fr_BF(string)
-        case .fr_BI: self = .fr_BI(string)
-        case .fr_CM: self = .fr_CM(string)
-        case .fr_CA: self = .fr_CA(string)
-        case .fr_CF: self = .fr_CF(string)
-        case .fr_TD: self = .fr_TD(string)
-        case .fr_KM: self = .fr_KM(string)
-        case .fr_CG: self = .fr_CG(string)
-        case .fr_CD: self = .fr_CD(string)
-        case .fr_CI: self = .fr_CI(string)
-        case .fr_DJ: self = .fr_DJ(string)
-        case .fr_GQ: self = .fr_GQ(string)
-        case .fr_FR: self = .fr_FR(string)
-        case .fr_GA: self = .fr_GA(string)
-        case .fr_GP: self = .fr_GP(string)
-        case .fr_GN: self = .fr_GN(string)
-        case .fr_LU: self = .fr_LU(string)
-        case .fr_MG: self = .fr_MG(string)
-        case .fr_ML: self = .fr_ML(string)
-        case .fr_MQ: self = .fr_MQ(string)
-        case .fr_MC: self = .fr_MC(string)
-        case .fr_NE: self = .fr_NE(string)
-        case .fr_RW: self = .fr_RW(string)
-        case .fr_RE: self = .fr_RE(string)
-        case .fr_BL: self = .fr_BL(string)
-        case .fr_MF: self = .fr_MF(string)
-        case .fr_SN: self = .fr_SN(string)
-        case .fr_CH: self = .fr_CH(string)
-        case .fr_TG: self = .fr_TG(string)
         case .fr: self = .fr(string)
-        case .ff_SN: self = .ff_SN(string)
         case .ff: self = .ff(string)
-        case .gl_ES: self = .gl_ES(string)
         case .gl: self = .gl(string)
-        case .lg_UG: self = .lg_UG(string)
-        case .lg: self = .lg(string)
-        case .ka_GE: self = .ka_GE(string)
         case .ka: self = .ka(string)
-        case .de_AT: self = .de_AT(string)
-        case .de_BE: self = .de_BE(string)
-        case .de_DE: self = .de_DE(string)
-        case .de_LI: self = .de_LI(string)
-        case .de_LU: self = .de_LU(string)
-        case .de_CH: self = .de_CH(string)
         case .de: self = .de(string)
-        case .el_CY: self = .el_CY(string)
-        case .el_GR: self = .el_GR(string)
         case .el: self = .el(string)
-        case .gu_IN: self = .gu_IN(string)
         case .gu: self = .gu(string)
-        case .guz_KE: self = .guz_KE(string)
         case .guz: self = .guz(string)
-        case .ha_Latn: self = .ha_Latn(string)
-        case .ha_Latn_GH: self = .ha_Latn_GH(string)
-        case .ha_Latn_NE: self = .ha_Latn_NE(string)
-        case .ha_Latn_NG: self = .ha_Latn_NG(string)
         case .ha: self = .ha(string)
-        case .haw_US: self = .haw_US(string)
         case .haw: self = .haw(string)
-        case .he_IL: self = .he_IL(string)
         case .he: self = .he(string)
-        case .hi_IN: self = .hi_IN(string)
         case .hi: self = .hi(string)
-        case .hu_HU: self = .hu_HU(string)
         case .hu: self = .hu(string)
-        case .is_IS: self = .is_IS(string)
         case .is: self = .is(string)
-        case .ig_NG: self = .ig_NG(string)
-        case .ig: self = .ig(string)
-        case .id_ID: self = .id_ID(string)
         case .id: self = .id(string)
-        case .ga_IE: self = .ga_IE(string)
         case .ga: self = .ga(string)
-        case .it_IT: self = .it_IT(string)
-        case .it_CH: self = .it_CH(string)
         case .it: self = .it(string)
-        case .ja_JP: self = .ja_JP(string)
         case .ja: self = .ja(string)
-        case .kea_CV: self = .kea_CV(string)
         case .kea: self = .kea(string)
-        case .kab_DZ: self = .kab_DZ(string)
         case .kab: self = .kab(string)
-        case .kl_GL: self = .kl_GL(string)
         case .kl: self = .kl(string)
-        case .kln_KE: self = .kln_KE(string)
         case .kln: self = .kln(string)
-        case .kam_KE: self = .kam_KE(string)
         case .kam: self = .kam(string)
-        case .kn_IN: self = .kn_IN(string)
         case .kn: self = .kn(string)
-        case .kk_Cyrl: self = .kk_Cyrl(string)
-        case .kk_Cyrl_KZ: self = .kk_Cyrl_KZ(string)
         case .kk: self = .kk(string)
-        case .km_KH: self = .km_KH(string)
         case .km: self = .km(string)
-        case .ki_KE: self = .ki_KE(string)
-        case .ki: self = .ki(string)
-        case .rw_RW: self = .rw_RW(string)
         case .rw: self = .rw(string)
-        case .kok_IN: self = .kok_IN(string)
         case .kok: self = .kok(string)
-        case .ko_KR: self = .ko_KR(string)
         case .ko: self = .ko(string)
-        case .khq_ML: self = .khq_ML(string)
         case .khq: self = .khq(string)
-        case .ses_ML: self = .ses_ML(string)
         case .ses: self = .ses(string)
-        case .lag_TZ: self = .lag_TZ(string)
         case .lag: self = .lag(string)
-        case .lv_LV: self = .lv_LV(string)
         case .lv: self = .lv(string)
-        case .lt_LT: self = .lt_LT(string)
         case .lt: self = .lt(string)
-        case .luo_KE: self = .luo_KE(string)
         case .luo: self = .luo(string)
-        case .luy_KE: self = .luy_KE(string)
         case .luy: self = .luy(string)
-        case .mk_MK: self = .mk_MK(string)
         case .mk: self = .mk(string)
-        case .jmc_TZ: self = .jmc_TZ(string)
         case .jmc: self = .jmc(string)
-        case .kde_TZ: self = .kde_TZ(string)
         case .kde: self = .kde(string)
-        case .mg_MG: self = .mg_MG(string)
         case .mg: self = .mg(string)
-        case .ms_BN: self = .ms_BN(string)
-        case .ms_MY: self = .ms_MY(string)
         case .ms: self = .ms(string)
-        case .ml_IN: self = .ml_IN(string)
         case .ml: self = .ml(string)
-        case .mt_MT: self = .mt_MT(string)
         case .mt: self = .mt(string)
-        case .gv_GB: self = .gv_GB(string)
         case .gv: self = .gv(string)
-        case .mr_IN: self = .mr_IN(string)
         case .mr: self = .mr(string)
-        case .mas_KE: self = .mas_KE(string)
-        case .mas_TZ: self = .mas_TZ(string)
         case .mas: self = .mas(string)
-        case .mer_KE: self = .mer_KE(string)
         case .mer: self = .mer(string)
-        case .mfe_MU: self = .mfe_MU(string)
         case .mfe: self = .mfe(string)
-        case .naq_NA: self = .naq_NA(string)
         case .naq: self = .naq(string)
-        case .ne_IN: self = .ne_IN(string)
-        case .ne_NP: self = .ne_NP(string)
         case .ne: self = .ne(string)
-        case .nd_ZW: self = .nd_ZW(string)
         case .nd: self = .nd(string)
-        case .nb_NO: self = .nb_NO(string)
         case .nb: self = .nb(string)
-        case .nn_NO: self = .nn_NO(string)
         case .nn: self = .nn(string)
-        case .nyn_UG: self = .nyn_UG(string)
         case .nyn: self = .nyn(string)
-        case .or_IN: self = .or_IN(string)
         case .or: self = .or(string)
-        case .om_ET: self = .om_ET(string)
-        case .om_KE: self = .om_KE(string)
         case .om: self = .om(string)
-        case .ps_AF: self = .ps_AF(string)
         case .ps: self = .ps(string)
-        case .fa_AF: self = .fa_AF(string)
-        case .fa_IR: self = .fa_IR(string)
         case .fa: self = .fa(string)
-        case .pl_PL: self = .pl_PL(string)
         case .pl: self = .pl(string)
-        case .pt_BR: self = .pt_BR(string)
-        case .pt_GW: self = .pt_GW(string)
-        case .pt_MZ: self = .pt_MZ(string)
-        case .pt_PT: self = .pt_PT(string)
         case .pt: self = .pt(string)
-        case .pa_Arab: self = .pa_Arab(string)
-        case .pa_Arab_PK: self = .pa_Arab_PK(string)
-        case .pa_Guru: self = .pa_Guru(string)
-        case .pa_Guru_IN: self = .pa_Guru_IN(string)
         case .pa: self = .pa(string)
-        case .ro_MD: self = .ro_MD(string)
-        case .ro_RO: self = .ro_RO(string)
         case .ro: self = .ro(string)
-        case .rm_CH: self = .rm_CH(string)
         case .rm: self = .rm(string)
-        case .rof_TZ: self = .rof_TZ(string)
         case .rof: self = .rof(string)
-        case .ru_MD: self = .ru_MD(string)
-        case .ru_RU: self = .ru_RU(string)
-        case .ru_UA: self = .ru_UA(string)
         case .ru: self = .ru(string)
-        case .rwk_TZ: self = .rwk_TZ(string)
-        case .rwk: self = .rwk(string)
-        case .saq_KE: self = .saq_KE(string)
         case .saq: self = .saq(string)
-        case .sg_CF: self = .sg_CF(string)
         case .sg: self = .sg(string)
-        case .seh_MZ: self = .seh_MZ(string)
         case .seh: self = .seh(string)
-        case .sr_Cyrl: self = .sr_Cyrl(string)
-        case .sr_Cyrl_BA: self = .sr_Cyrl_BA(string)
-        case .sr_Cyrl_ME: self = .sr_Cyrl_ME(string)
-        case .sr_Cyrl_RS: self = .sr_Cyrl_RS(string)
-        case .sr_Latn: self = .sr_Latn(string)
-        case .sr_Latn_BA: self = .sr_Latn_BA(string)
-        case .sr_Latn_ME: self = .sr_Latn_ME(string)
-        case .sr_Latn_RS: self = .sr_Latn_RS(string)
         case .sr: self = .sr(string)
-        case .sn_ZW: self = .sn_ZW(string)
         case .sn: self = .sn(string)
-        case .ii_CN: self = .ii_CN(string)
-        case .ii: self = .ii(string)
-        case .si_LK: self = .si_LK(string)
         case .si: self = .si(string)
-        case .sk_SK: self = .sk_SK(string)
         case .sk: self = .sk(string)
-        case .sl_SI: self = .sl_SI(string)
         case .sl: self = .sl(string)
-        case .xog_UG: self = .xog_UG(string)
         case .xog: self = .xog(string)
-        case .so_DJ: self = .so_DJ(string)
-        case .so_ET: self = .so_ET(string)
-        case .so_KE: self = .so_KE(string)
-        case .so_SO: self = .so_SO(string)
         case .so: self = .so(string)
-        case .es_AR: self = .es_AR(string)
-        case .es_BO: self = .es_BO(string)
-        case .es_CL: self = .es_CL(string)
-        case .es_CO: self = .es_CO(string)
-        case .es_CR: self = .es_CR(string)
-        case .es_DO: self = .es_DO(string)
-        case .es_EC: self = .es_EC(string)
-        case .es_SV: self = .es_SV(string)
-        case .es_GQ: self = .es_GQ(string)
-        case .es_GT: self = .es_GT(string)
-        case .es_HN: self = .es_HN(string)
-        case .es_419: self = .es_419(string)
-        case .es_MX: self = .es_MX(string)
-        case .es_NI: self = .es_NI(string)
-        case .es_PA: self = .es_PA(string)
-        case .es_PY: self = .es_PY(string)
-        case .es_PE: self = .es_PE(string)
-        case .es_PR: self = .es_PR(string)
-        case .es_ES: self = .es_ES(string)
-        case .es_US: self = .es_US(string)
-        case .es_UY: self = .es_UY(string)
-        case .es_VE: self = .es_VE(string)
         case .es: self = .es(string)
-        case .sw_KE: self = .sw_KE(string)
-        case .sw_TZ: self = .sw_TZ(string)
-        case .sw: self = .sw(string)
-        case .sv_FI: self = .sv_FI(string)
-        case .sv_SE: self = .sv_SE(string)
         case .sv: self = .sv(string)
-        case .gsw_CH: self = .gsw_CH(string)
-        case .gsw: self = .gsw(string)
-        case .shi_Latn: self = .shi_Latn(string)
-        case .shi_Latn_MA: self = .shi_Latn_MA(string)
-        case .shi_Tfng: self = .shi_Tfng(string)
-        case .shi_Tfng_MA: self = .shi_Tfng_MA(string)
-        case .shi: self = .shi(string)
-        case .dav_KE: self = .dav_KE(string)
-        case .dav: self = .dav(string)
-        case .ta_IN: self = .ta_IN(string)
-        case .ta_LK: self = .ta_LK(string)
         case .ta: self = .ta(string)
-        case .te_IN: self = .te_IN(string)
         case .te: self = .te(string)
-        case .teo_KE: self = .teo_KE(string)
-        case .teo_UG: self = .teo_UG(string)
         case .teo: self = .teo(string)
-        case .th_TH: self = .th_TH(string)
         case .th: self = .th(string)
-        case .bo_CN: self = .bo_CN(string)
-        case .bo_IN: self = .bo_IN(string)
         case .bo: self = .bo(string)
-        case .ti_ER: self = .ti_ER(string)
-        case .ti_ET: self = .ti_ET(string)
         case .ti: self = .ti(string)
-        case .to_TO: self = .to_TO(string)
         case .to: self = .to(string)
-        case .tr_TR: self = .tr_TR(string)
         case .tr: self = .tr(string)
-        case .uk_UA: self = .uk_UA(string)
         case .uk: self = .uk(string)
-        case .ur_IN: self = .ur_IN(string)
-        case .ur_PK: self = .ur_PK(string)
         case .ur: self = .ur(string)
-        case .uz_Arab: self = .uz_Arab(string)
-        case .uz_Arab_AF: self = .uz_Arab_AF(string)
-        case .uz_Cyrl: self = .uz_Cyrl(string)
-        case .uz_Cyrl_UZ: self = .uz_Cyrl_UZ(string)
-        case .uz_Latn: self = .uz_Latn(string)
-        case .uz_Latn_UZ: self = .uz_Latn_UZ(string)
         case .uz: self = .uz(string)
-        case .vi_VN: self = .vi_VN(string)
         case .vi: self = .vi(string)
-        case .vun_TZ: self = .vun_TZ(string)
         case .vun: self = .vun(string)
-        case .cy_GB: self = .cy_GB(string)
         case .cy: self = .cy(string)
-        case .yo_NG: self = .yo_NG(string)
         case .yo: self = .yo(string)
-        case .zu_ZA: self = .zu_ZA(string)
         case .zu: self = .zu(string)
+        default: self = .en(string)
         // Add a default case or handle potential mismatches if Language enum
         // doesn't perfectly align with LocalizedString cases.
         // For now, assuming a direct mapping exists for all Language cases.
