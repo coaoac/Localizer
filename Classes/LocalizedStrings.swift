@@ -31,7 +31,7 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
     // Allow initialization with a dictionary literal using String keys: let map: LocalizedStringMap = ["en": "Hello", "sv": "Hej"]
     init(dictionaryLiteral elements: (String, String)...) {
         self.localizations = elements.compactMap { langPrefix, text in
-            Language.allCases.first { $0.prefix == langPrefix }
+            Language.allCases.first { $0.rawValue == langPrefix }
                 .map { LocalizedString(text, language: $0) }
         }
     }
@@ -54,7 +54,7 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
 
         var tempIngredients: [LocalizedString] = []
         for (langPrefix, text) in ingredientsMap {
-            if let language = Language.allCases.first(where: { $0.prefix == langPrefix }) {
+            if let language = Language.allCases.first(where: { $0.rawValue == langPrefix }) {
                 tempIngredients.append(LocalizedString(text, language: language))
             } else {
                 print(
@@ -74,7 +74,7 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
         } else {
             let ingredientsMap = localizations.reduce(into: [String: String]()) {
                 result, localizedString in
-                result[localizedString.language.prefix] = localizedString.string
+                result[localizedString.language.rawValue] = localizedString.string
                 // Note: If duplicate languages exist, the last one in the array wins.
             }
             var container = encoder.singleValueContainer()
@@ -142,7 +142,7 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
             }
 
             // Check for prefix match (store it but continue checking for exact match)
-            if localization.language.prefix == targetPrefix {
+            if localization.language.rawValue == targetPrefix {
                  // Prefer specific regional match over generic prefix if both exist
                  if prefixMatch == nil || prefixMatch!.language.rawValue.count < localization.language.rawValue.count {
                       prefixMatch = localization
@@ -153,7 +153,7 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
             if localization.language == defaultLanguage {
                 defaultMatch = localization
             }
-            if localization.language.prefix == defaultLanguage.prefix {
+            if localization.language.rawValue == defaultLanguage.rawValue {
                  // Prefer specific regional default match over generic prefix
                  if defaultPrefixMatch == nil || defaultPrefixMatch!.language.rawValue.count < localization.language.rawValue.count {
                      defaultPrefixMatch = localization

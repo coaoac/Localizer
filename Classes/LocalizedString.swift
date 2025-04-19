@@ -1315,10 +1315,6 @@ public enum LocalizedString: Sendable, Codable, Equatable, Hashable {
         }
     }
     
-    public var prefix: String {
-        return language.prefix
-    }
-    
     public enum ValueType {
         case short, long
     }

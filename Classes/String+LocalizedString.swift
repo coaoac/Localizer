@@ -75,7 +75,7 @@ internal extension String {
                 return
             }
             // Priority 2: Prefix match (store best regional)
-            if localization.language.prefix == targetLocalePrefix {
+            if localization.language.rawValue == targetLocalePrefix {
                 if prefixMatch == nil || prefixMatch!.language.rawValue.count < localization.language.rawValue.count {
                     prefixMatch = localization
                 }
@@ -85,7 +85,7 @@ internal extension String {
                 defaultMatch = localization
             }
             // Priority 4: Default prefix match (store best regional)
-            if localization.language.prefix == defaultLanguage.prefix {
+            if localization.language.rawValue == defaultLanguage.rawValue {
                 if defaultPrefixMatch == nil || defaultPrefixMatch!.language.rawValue.count < localization.language.rawValue.count {
                     defaultPrefixMatch = localization
                 }
