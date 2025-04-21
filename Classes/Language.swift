@@ -140,6 +140,17 @@ public enum Language: String, CustomStringConvertible, Sendable, CaseIterable, C
     case yo
     case zu
 
+    public static let supported: [Language] = [.sv]
+    public static let supportedForUI: [Language] = [.en, .sv]
+
+    public static var default: Language {
+        return supported.first!
+    }
+
+    public static var defaultForUI: Language {
+        return supportedForUI.first!
+    }
+
     public static var current: Language {
         let localeIdentifier = Locale.current.languageCode ?? "sv"
         return Language(rawValue: localeIdentifier) ?? .sv
