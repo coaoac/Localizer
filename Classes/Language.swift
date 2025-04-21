@@ -143,7 +143,7 @@ public enum Language: String, CustomStringConvertible, Sendable, CaseIterable, C
     public static let supported: [Language] = [.sv]
     public static let supportedForUI: [Language] = [.en, .sv]
 
-    public static var default: Language {
+    public static var defaultForData: Language {
         return supported.first!
     }
 
