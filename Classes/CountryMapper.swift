@@ -208,6 +208,11 @@ public enum CountryCode: String, CaseIterable, Sendable, Codable {
     case VU = "VU"  // Vanuatu
     case WS = "WS"  // Samoa
     
+    public static var current : CountryCode {
+        let locale = Locale.current
+        let countryCode = locale.regionCode ?? ""
+        return CountryCode(rawValue: countryCode) ?? .SE
+    }
     
     /// Maps a country name to its ISO 3166-1 alpha-2 code
     /// - Parameter text: Lowercased country name text
