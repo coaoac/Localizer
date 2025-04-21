@@ -1,7 +1,7 @@
 import Foundation
 
 /// Helper enum for mapping country names to ISO codes
-public enum CountryCode: String, CaseIterable, Sendable {
+public enum CountryCode: String, CaseIterable, Sendable, Codable {
     // European countries
     case AD = "AD"  // Andorra
     case AL = "AL"  // Albania

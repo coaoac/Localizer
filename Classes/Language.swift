@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Language: String, CustomStringConvertible, Sendable, CaseIterable {
+public enum Language: String, CustomStringConvertible, Sendable, CaseIterable, Codable {
     case af
     case ak
     case sq
