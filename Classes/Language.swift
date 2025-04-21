@@ -140,9 +140,9 @@ public enum Language: String, CustomStringConvertible, Sendable, CaseIterable, C
     case yo
     case zu
 
-    public static var currentLanguage: Language {
-        let localeIdentifier = Locale.current.languageCode ?? "en"
-        return Language(rawValue: localeIdentifier) ?? .en
+    public static var current: Language {
+        let localeIdentifier = Locale.current.languageCode ?? "sv"
+        return Language(rawValue: localeIdentifier) ?? .sv
     }
     
     public var description: String {
