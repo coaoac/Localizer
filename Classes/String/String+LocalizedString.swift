@@ -1,30 +1,48 @@
 import Foundation
 
 // Only this initializer should be public
-public extension String {
+extension String {
     /// Initializes a string by selecting the best match from the provided `LocalizedStrings`
     /// based on the current device locale and the default fallback language.
     ///
     /// - Parameter localizedStrings: The `LocalizedStrings` instance containing multiple localizations.
-    init(_ localizedStrings: LocalizedStrings) {
+    public init(_ localizedStrings: LocalizedStringList) {
         // Use the logic already built into LocalizedStrings
         if let selectedString = localizedStrings.stringForCurrentDeviceLocale() {
             self.init(selectedString)
         } else {
             // Fallback if no suitable string is found
-            self.init("???") // Or self.init("") if preferred
+            self.init("???")  // Or self.init("") if preferred
             let localeIdentifier = Locale.current.identifier
             let defaultLang = Localizer.default.rawValue
             // Avoid printing the entire potentially large localizations array
-            let availableLangs = localizedStrings.localizations.map { $0.language.rawValue }.joined(separator: ", ")
-            print("⚠️ String(LocalizedStrings): ❌ Could not find suitable localization for locale '\(localeIdentifier)' or default '\(defaultLang)'. Available: [\(availableLangs)]. Using fallback.")
+            let availableLangs = localizedStrings.localizations.map { $0.language.rawValue }.joined(
+                separator: ", ")
+            print(
+                "⚠️ String(LocalizedStrings): ❌ Could not find suitable localization for locale '\(localeIdentifier)' or default '\(defaultLang)'. Available: [\(availableLangs)]. Using fallback."
+            )
         }
+    }
+
+    /// Initializes a string by selecting the best match from the provided dictionary of localizations
+    /// based on the current device locale and the default fallback language.
+    ///
+    /// This is a convenience initializer that creates a `LocalizedStringList` internally.
+    /// Note: This initializer only considers base language entries provided in the dictionary.
+    ///
+    /// - Parameter dictionary: A dictionary mapping `Language` enum cases to their corresponding string values.
+    public init(_ dictionary: [Language: String]) {
+        // 1. Create a LocalizedStringList from the dictionary
+        let localizedList = LocalizedStringList(dictionary)
+
+        // 2. Delegate to the initializer that takes a LocalizedStringList
+        self.init(localizedList)
     }
 }
 
 // Keep other initializers internal for use within the module if needed,
 // or remove them if they are no longer necessary.
-internal extension String {
+extension String {
 
     // Make properties private if only used within this extension
     private var localePrefix: String {
@@ -33,25 +51,25 @@ internal extension String {
     }
 
     // Internal initializer taking variadic LocalizedString
-    init (_ ls: LocalizedString...) {
+    init(_ ls: LocalizedString...) {
         // Ensure the array version is called if needed, passing Localizer.shared
         self.init(for: Localizer.shared, Array(ls))
     }
 
     // Internal initializer taking Localizable and variadic LocalizedString
-    init <L: Localizable>(for localizable: L, _ ls: LocalizedString...) {
+    init<L: Localizable>(for localizable: L, _ ls: LocalizedString...) {
         // Ensure the array version is called
         self.init(for: localizable, Array(ls))
     }
 
     // Internal initializer taking array of LocalizedString (uses Localizer.shared)
-    init (_ ls: [LocalizedString]) {
+    init(_ ls: [LocalizedString]) {
         self.init(for: Localizer.shared, ls)
     }
 
     // Internal initializer with the core selection logic (kept internal)
     // This version takes a Localizable object to get the locale.
-    init <L: Localizable>(for localizable: L, _ ls: [LocalizedString]) {
+    init<L: Localizable>(for localizable: L, _ ls: [LocalizedString]) {
         guard !ls.isEmpty else {
             self.init("")
             print("⚠️ String(for: []): ❌ EMPTY STRING array provided.")
@@ -59,7 +77,7 @@ internal extension String {
         }
 
         // Determine target locale and prefix
-        let targetLocaleIdentifier = localizable.locale ?? Locale.current.identifier // Fallback to current locale if Localizable provides nil
+        let targetLocaleIdentifier = localizable.locale ?? Locale.current.identifier  // Fallback to current locale if Localizable provides nil
         let targetLocalePrefix = targetLocaleIdentifier.localePrefix
         let defaultLanguage = Localizer.default
 
@@ -76,7 +94,9 @@ internal extension String {
             }
             // Priority 2: Prefix match (store best regional)
             if localization.language.rawValue == targetLocalePrefix {
-                if prefixMatch == nil || prefixMatch!.language.rawValue.count < localization.language.rawValue.count {
+                if prefixMatch == nil
+                    || prefixMatch!.language.rawValue.count < localization.language.rawValue.count
+                {
                     prefixMatch = localization
                 }
             }
@@ -86,13 +106,16 @@ internal extension String {
             }
             // Priority 4: Default prefix match (store best regional)
             if localization.language.rawValue == defaultLanguage.rawValue {
-                if defaultPrefixMatch == nil || defaultPrefixMatch!.language.rawValue.count < localization.language.rawValue.count {
+                if defaultPrefixMatch == nil
+                    || defaultPrefixMatch!.language.rawValue.count
+                        < localization.language.rawValue.count
+                {
                     defaultPrefixMatch = localization
                 }
             }
         }
 
-        // --- Return based on priority --- 
+        // --- Return based on priority ---
         if let match = prefixMatch {
             self.init(match.string)
             return
@@ -106,21 +129,25 @@ internal extension String {
             return
         }
 
-        // --- Final Fallbacks --- 
+        // --- Final Fallbacks ---
         // Try the *absolute* first language provided if nothing else worked
         if let firstString = ls.first?.string {
             self.init(firstString)
-            print("⚠️ String(for: [Local...]): ⚠️ No locale match for '\(targetLocaleIdentifier)' or default '\(defaultLanguage.rawValue)'. Using first provided string ('\(ls.first!.language.rawValue)').")
+            print(
+                "⚠️ String(for: [Local...]): ⚠️ No locale match for '\(targetLocaleIdentifier)' or default '\(defaultLanguage.rawValue)'. Using first provided string ('\(ls.first!.language.rawValue)')."
+            )
             return
         }
-        
+
         // Should be impossible if ls wasn't empty initially
         self.init("???")
-        print("⚠️ String(for: [Local...]): ❌ UNEXPECTED FALLTHROUGH. No suitable string found for locale '\(targetLocaleIdentifier)'.")
+        print(
+            "⚠️ String(for: [Local...]): ❌ UNEXPECTED FALLTHROUGH. No suitable string found for locale '\(targetLocaleIdentifier)'."
+        )
     }
 
     // Keep this helper internal as well
     func localized(_ language: Language) -> LocalizedString {
-        return LocalizedString(self, language:language)
+        return LocalizedString(self, language: language)
     }
 }

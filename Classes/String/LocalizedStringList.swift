@@ -1,6 +1,6 @@
 import Foundation
 
-public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLiteral, Sendable {
+public struct LocalizedStringList: Codable, Hashable, ExpressibleByDictionaryLiteral, Sendable {
 
     // Add these typealiases to conform to ExpressibleByDictionaryLiteral
     public typealias Key = Language
@@ -125,8 +125,8 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
 
         // Use the more compatible languageCode property
         guard let targetPrefix = currentLocale.languageCode else {
-             // Cannot determine current language code, try default
-             return self[defaultLanguage]
+            // Cannot determine current language code, try default
+            return self[defaultLanguage]
         }
         // Use the standard identifier for the full match
         let fullTargetIdentifier = currentLocale.identifier
@@ -143,10 +143,12 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
 
             // Check for prefix match (store it but continue checking for exact match)
             if localization.language.rawValue == targetPrefix {
-                 // Prefer specific regional match over generic prefix if both exist
-                 if prefixMatch == nil || prefixMatch!.language.rawValue.count < localization.language.rawValue.count {
-                      prefixMatch = localization
-                 }
+                // Prefer specific regional match over generic prefix if both exist
+                if prefixMatch == nil
+                    || prefixMatch!.language.rawValue.count < localization.language.rawValue.count
+                {
+                    prefixMatch = localization
+                }
             }
 
             // Check default matches (store them but continue checking)
@@ -154,22 +156,25 @@ public struct LocalizedStrings: Codable, Hashable, ExpressibleByDictionaryLitera
                 defaultMatch = localization
             }
             if localization.language.rawValue == defaultLanguage.rawValue {
-                 // Prefer specific regional default match over generic prefix
-                 if defaultPrefixMatch == nil || defaultPrefixMatch!.language.rawValue.count < localization.language.rawValue.count {
-                     defaultPrefixMatch = localization
-                 }
+                // Prefer specific regional default match over generic prefix
+                if defaultPrefixMatch == nil
+                    || defaultPrefixMatch!.language.rawValue.count
+                        < localization.language.rawValue.count
+                {
+                    defaultPrefixMatch = localization
+                }
             }
         }
 
         // Return based on priority
         if let match = prefixMatch {
-            return match.string // Priority 2
+            return match.string  // Priority 2
         }
         if let match = defaultMatch {
-            return match.string // Priority 3
+            return match.string  // Priority 3
         }
         if let match = defaultPrefixMatch {
-            return match.string // Priority 4
+            return match.string  // Priority 4
         }
 
         // Final fallback: return nil if nothing matched
