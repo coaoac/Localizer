@@ -2,39 +2,11 @@ import Foundation
 
 public struct LocalizedData: Sendable, Hashable {  // Codable/Equatable handled manually/synthesized
 
-    // --- Nested Enums for Type and Encoding ---
-    public enum DataType: String, Codable, Sendable, Equatable, Hashable {
-        case jpeg = "image/jpeg"
-        case png = "image/png"
-        case gif = "image/gif"
-        case webp = "image/webp"
-        case svg = "image/svg+xml"
-        case tiff = "image/tiff"
-        // Add other relevant data types (e.g., text/plain, application/json) if needed
-        case plainText = "text/plain"
-        case json = "application/json"
-        // ... etc.
-    }
-
-    public enum DataEncoding: String, Codable, Sendable, Equatable, Hashable {
-        case base64
-        // Add other encodings if necessary (e.g., none, utf8 for text)
-        case none  // Represents raw Data without specific encoding layer like base64
-        case utf8  // For text data stored directly in Data
-    }
-
     /// Struct holding the localized data payload with typed enums.
     public struct Value: Sendable, Codable, Equatable, Hashable {
         public let data: Data
-        public let type: DataType  // Use the nested enum
-        public let encoding: DataEncoding  // Use the nested enum
-
-        // Memberwise initializer is synthesized automatically.
-        // public init(data: Data, type: DataType, encoding: DataEncoding) {
-        //     self.data = data
-        //     self.type = type
-        //     self.encoding = encoding
-        // }
+        public let type: Data.Format  // Use the nested enum
+        public let encoding: Data.Encoding  // Use the nested enum
     }
 
     // --- Main LocalizedData Properties ---
