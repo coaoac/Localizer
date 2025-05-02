@@ -1,6 +1,6 @@
 import Foundation
 
-public extension Data {
+extension Data {
     // --- Nested Enums for Type and Encoding ---
     public enum Format: String, Codable, Sendable, Equatable, Hashable {
         case jpeg = "image/jpeg"
